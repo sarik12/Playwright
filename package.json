@@ -1,10 +1,15 @@
 {
-  "name": "Playwright",
+  "name": "playwright",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.32.1"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "npx playwright test ",
+    "test-html-report": "playwright test --browser=all --reporter=html",
+    "test-json-report": "PLAYWRIGHT_JSON_OUTPUT_NAME=results.json playwright test --browser=chromium --reporter=json",
+    "docker": "run -it playwright-docker:latest yarn test"
+  }
 }
